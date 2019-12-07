@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <loading :active.sync="isLoading"></loading>
     <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
@@ -118,6 +118,41 @@
                             <h4>Modern Chair</h4>
                         </div>
                     </a>
+                </div>
+
+                <div class="single-products-catagory clearfix col-sm-4" v-for="item in products" :key="item.id">
+                  <div class="card border-0 shadow-sm">
+                    <a href="">
+                      <img v-bind:src="item.imageUrl" alt="" style="height:250px; width:200px" >
+                      <!-- <div style="height: 250px; background-size: cover; background-position: center"
+                        :style="{backgroundImage: `url(${item.imageUrl})`}">
+                      </div> -->
+                      <div class="card-body">
+                        <span class="badge badge-secondary float-right ml-2">{{ item.category }}</span>
+                        <h5 class="card-title">
+                          <a href="#" class="text-dark">{{ item.title }}</a>
+                        </h5>
+                        <p class="card-text">{{ item.content }}</p>
+                        <div class="d-flex justify-content-between align-items-baseline">
+                          <div class="h5" v-if="!item.price">{{ item.origin_price }} 元</div>
+                          <del class="h6" v-if="item.price">原價 {{ item.origin_price }} 元</del>
+                          <div class="h5" v-if="item.price">現在只要 {{ item.price }} 元</div>
+                        </div>
+                      </div>
+                      <div class="card-footer d-flex">
+                        <button type="button" class="btn btn-outline-secondary btn-sm"
+                        @click="getProduct(item.id)">
+                        <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i> 
+                        <!-- 當讀取的id＝商品id時呈現讀取效果 -->
+                          查看更多
+                        </button>
+                        <button type="button" @click="addtoCart(item.id)" class="btn btn-outline-danger btn-sm ml-auto">
+                          <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
+                          加到購物車
+                        </button>
+                      </div>
+                    </a>
+                  </div>
                 </div>
 
                 <!-- Single Catagory -->
