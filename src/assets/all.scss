@@ -2,3 +2,18 @@
 @import "./helpers/_variables"; //載入自定義變數
 @import "~bootstrap/scss/bootstrap";
 @import "./dashboard"; //載入dashboard的scss
+
+.products-tabs{
+  .tab-pane{
+  padding-bottom: 100px;
+}
+}
+
+
+.product {
+  .product-body{
+    .product-name{
+  font-size: 18px;
+    }
+  } 
+}
