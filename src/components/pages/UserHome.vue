@@ -30,7 +30,8 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="https://colorlib.com/preview/theme/electro/img/logo.png" alt="">
+									<!-- <img src="https://colorlib.com/preview/theme/electro/img/logo.png" alt=""> -->
+									<img src="../../assets/aperture_logo.png">
 								</a>
 							</div>
 						</div>
@@ -76,7 +77,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="https://colorlib.com/preview/theme/electro/img/product01.png" alt="">
+													<img src="../../assets/img/lens.jpg" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -163,11 +164,11 @@
 						<div class="shop">
 							<div class="shop-img">
                 <!-- https://colorlib.com/preview/theme/electro/img/logo.png -->
-								<img src="https://colorlib.com/preview/theme/electro/img/shop01.png" alt="">
+								<img src="../../assets/img/lens.jpg" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>專業光學鏡頭<br>EF/RF接環</h3>
+								<!-- <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a> -->
 							</div>
 						</div>
 					</div>
@@ -177,11 +178,11 @@
 						<div class="shop">
 							<div class="shop-img">
                 <!-- https://colorlib.com/preview/theme/electro/img/logo.png -->
-								<img src="https://colorlib.com/preview/theme/electro/img/shop01.png" alt="">
+								<img src="../../assets/img/camera.jpg" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>專業數位單眼相機<br>EOS/EOS R系列</h3>
+								<!-- <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a> -->
 							</div>
 						</div>
 					</div>
@@ -191,11 +192,11 @@
 						<div class="shop">
 							<div class="shop-img">
                 <!-- https://colorlib.com/preview/theme/electro/img/logo.png -->
-								<img src="https://colorlib.com/preview/theme/electro/img/shop01.png" alt="">
+								<img src="../../assets/img/SPL.jpg" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>專業閃光燈<br>Speedlite系列</h3>
+								<!-- <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a> -->
 							</div>
 						</div>
 					</div>
@@ -325,6 +326,29 @@
 				</div>
 				<!-- /產品Modal -->
 
+				<!-- 頁碼nav -->
+				<nav aria-label="Page navigation example .page-nav-userhome" id="page-nav-userhome">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous" :class="{'disabled': !pagination.has_pre}" @click.prevent="getProducts(pagination.current_page - 1)"> 
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item" v-for="page in pagination.total_pages" :key="page"
+            :class="{'active':pagination.current_page === page}">
+              <a class="page-link" href="#" @click.prevent="getProducts(page)">{{page}}</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next" :class="{'disabled': !pagination.has_next}" @click.prevent="getProducts(pagination.current_page + 1)">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+				<!-- /頁碼nav -->
+
 			</div>
 			<!-- /container -->
 		</div>
@@ -399,6 +423,36 @@
 			opacity:1;
 		}
 	}
+#page-nav-userhome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #D10024;
+    border-color:#D10024;
+}
+
+.shop:before,.shop:after{
+	z-index: 1;
+	opacity: 0.8;
+}
+.shop:before{
+	width:33%;
+}
+
+.shop .shop-img{
+	z-index: 0;
+}
+.shop .shop-body h3{
+	text-align: left;
+}
+.shop .shop-body .cta-btn{
+	text-align: left;
+}
+
 </style>
 
 
@@ -421,7 +475,8 @@ export default {
   data() {
     return {
       products: [],
-      product: {},
+			product: {},
+			pagination:[], //新增分頁
       status: {
         loadingItem: '', //判定畫面中何者元素正在讀取中
       },
@@ -440,16 +495,29 @@ export default {
     };
   },
   methods: {
-    getProducts() {
-      const vm = this;
-      const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`;
-      vm.isLoading = true;
-      this.$http.get(url).then((response) => {
-        vm.products = response.data.products;
-        console.log("getProducts取得全部產品資訊",response);
-        vm.isLoading = false;
-      });
-    },
+    // getProducts() {
+    //   const vm = this;
+    //   const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`;
+    //   vm.isLoading = true;
+    //   this.$http.get(url).then((response) => {
+    //     vm.products = response.data.products;
+    //     console.log("getProducts取得全部產品資訊",response);
+    //     vm.isLoading = false;
+    //   });
+		// },
+		getProducts(page = 1){ //ES6: page的預設值為1
+        const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products?page=${page}`; //建立api的變數
+        const vm = this;
+        vm.isLoading = true; //啟動getProducts時啟用isLoading效果
+        this.$http.get(api).then((response) => {
+          console.log("getProducts:"+response.data);
+          // if(response.data.success){
+            vm.isLoading = false; //關閉getProducts時關閉isLoading效果
+            vm.products = response.data.products;
+            vm.pagination = response.data.pagination;
+          // }
+        });
+      },
     getProduct(id) {
       const vm = this;
       const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/product/${id}`;

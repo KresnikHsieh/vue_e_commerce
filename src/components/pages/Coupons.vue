@@ -86,6 +86,16 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+.modal.fade {
+    opacity: 0;
+		&.show{
+			opacity:1;
+		}
+	}
+</style>
+
+
 <script>
 import $ from 'jquery';
 export default {

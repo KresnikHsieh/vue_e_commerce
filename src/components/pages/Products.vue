@@ -170,6 +170,15 @@
     </div>
 </template>
 
+<style lang="scss" scoped>
+.modal.fade {
+    opacity: 0;
+		&.show{
+			opacity:1;
+		}
+	}
+</style>
+
 <script>
 import $ from 'jquery'; //將jQuery的$用法載入
 import Pagination from '../Pagination';
