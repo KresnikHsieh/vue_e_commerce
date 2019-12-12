@@ -181,6 +181,15 @@
   
 </template>
 
+<style lang="scss" scoped>
+.modal.fade {
+    opacity: 0;
+		&.show{
+			opacity:1;
+		}
+	}
+</style>
+
 <script>
 import $ from 'jquery'; //載入jQuery
 import { ValidationProvider } from 'vee-validate';

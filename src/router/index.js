@@ -9,6 +9,7 @@ import Coupons from '@/components/pages/Coupons';
 import CustomerOrder from '@/components/pages/CustomerOrders';
 import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import UserHome from '@/components/pages/UserHome';
+import Cart from '@/components/pages/Cart';
 
 Vue.use(Router)
 
@@ -70,14 +71,24 @@ export default new Router({
           name: 'CustomerOrder',
           component: CustomerOrder,
         },
-        { //建立巢狀的router-view
-          path: 'customer_checkout/:orderId',
-          name: 'CustomerCheckout',
-          component: CustomerCheckout,
-        },
+        // { //建立巢狀的router-view
+        //   path: 'customer_checkout/:orderId',
+        //   name: 'CustomerCheckout',
+        //   component: CustomerCheckout,
+        // },
         
       ],
     },
-    
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart,
+    },
+    { //建立巢狀的router-view
+      path: '/customer_checkout/:orderId',
+      name: 'CustomerCheckout',
+      component: CustomerCheckout,
+      meta: { requiresAuth: false },
+    },
   ]
 })
