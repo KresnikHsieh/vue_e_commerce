@@ -66,7 +66,6 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
