@@ -7,6 +7,8 @@ import Products from '@/components/pages/Products';
 import Orders from '@/components/pages/Orders';
 import Coupons from '@/components/pages/Coupons';
 import CustomerOrder from '@/components/pages/CustomerOrders';
+
+import UserHomeMain from '@/components/UserHomeMain';
 import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import UserHome from '@/components/pages/UserHome';
 import Cart from '@/components/pages/Cart';
@@ -51,18 +53,19 @@ export default new Router({
 
       ],
     },
-    {
+    { //建立登入頁面
       path: '/login',
       name: 'Login',
       component: Login,
     },
+
+    // {
+    //   path: '/',
+    //   name: 'UserHome',
+    //   component: UserHome,
+    // },
     {
-      path: '/',
-      name: 'UserHome',
-      component: UserHome,
-    },
-    {
-      path: '/',
+      path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard,
       children: [ 
@@ -71,24 +74,48 @@ export default new Router({
           name: 'CustomerOrder',
           component: CustomerOrder,
         },
-        // { //建立巢狀的router-view
-        //   path: 'customer_checkout/:orderId',
-        //   name: 'CustomerCheckout',
-        //   component: CustomerCheckout,
-        // },
-        
+       
       ],
     },
+
+    // { //建立購物車頁面
+    //   path: '/cart',
+    //   name: 'Cart',
+    //   component: Cart,
+    // },
+
+    // { //建立消費者結帳頁面
+    //   path: '/customer_checkout/:orderId',
+    //   name: 'CustomerCheckout',
+    //   component: CustomerCheckout,
+    //   meta: { requiresAuth: false },
+    // },
+
+
+    //建立分離巢狀式的UserHomeMain頁面
     {
-      path: '/cart',
-      name: 'Cart',
-      component: Cart,
-    },
-    { //建立巢狀的router-view
-      path: '/customer_checkout/:orderId',
-      name: 'CustomerCheckout',
-      component: CustomerCheckout,
-      meta: { requiresAuth: false },
+      path: '/',
+      name: 'UserHomeMain',
+      component: UserHomeMain,
+      children: [ 
+        { //建立巢狀的router-view: 消費者主頁
+          path: '',
+          name: 'UserHome',
+          component: UserHome,
+        },
+        { //建立巢狀的router-view: 購物車頁面
+          path: 'cart',
+          name: 'Cart',
+          component: Cart,
+        },
+        { //建立巢狀的router-view: 購物車結帳頁面
+          path: 'customer_checkout/:orderId',
+          name: 'CustomerCheckout',
+          component: CustomerCheckout,
+          meta: { requiresAuth: false },  
+        },
+
+      ],
     },
   ]
 })

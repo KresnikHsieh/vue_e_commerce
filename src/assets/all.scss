@@ -6,21 +6,24 @@
 .products-tabs{
   .tab-pane{
   padding-bottom: 100px;
+  }
 }
-}
-
 
 .product {
   .product-body{
     .product-name{
-  font-size: 18px;
+    font-size: 18px;
     }
   } 
 }
-
 
 .Page.navigation.example{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cart-grid{
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
