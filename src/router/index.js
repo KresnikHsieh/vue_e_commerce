@@ -13,6 +13,8 @@ import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import UserHome from '@/components/pages/UserHome';
 import Cart from '@/components/pages/Cart';
 import About from '@/components/pages/About';
+import Contact from '@/components/pages/Contact';
+import UserCoupon from '@/components/pages/UserCoupon';
 
 Vue.use(Router)
 
@@ -44,7 +46,7 @@ export default new Router({
           path: 'coupons',
           name: 'Coupons',
           component: Coupons,
-          meta: { requiresAuth: true },
+          meta: { requiresAuth: true},
         },
         {
           path: 'orders',
@@ -120,6 +122,16 @@ export default new Router({
           path: 'about',
           name: 'About',
           component: About,
+        },
+        { //建立巢狀的router-view: 聯絡我們
+          path: 'contact',
+          name: 'Contact',
+          component: Contact,
+        },
+        { //建立巢狀的router-view: 最新折扣
+          path: 'newcoupon',
+          name: 'UserCoupon',
+          component: UserCoupon,
         },
 
       ],
