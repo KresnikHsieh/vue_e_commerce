@@ -2,6 +2,9 @@
     <div>
       <loading :active.sync="isLoading"></loading> 
       <!-- 加入loading-overlay效果 -->
+        <div class="text-center mt-4">
+          <h2><i class="fas fa-box-open"></i> 產品列表</h2>
+        </div>
         <div class="text-right mt-4">
           <button class="btn-primary" @click="openModal(true)">建立新的產品</button> 
           <!-- openModal(isNew)以判斷開啟哪個Modal -->
@@ -40,7 +43,7 @@
           </tbody>
         </table>
 
-        <nav aria-label="Page navigation example">
+        <!-- <nav aria-label="Page navigation example">
           <ul class="pagination">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous" :class="{'disabled': !pagination.has_pre}" @click.prevent="getProducts(pagination.current_page - 1)"> 
@@ -59,7 +62,7 @@
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> -->
 
         <Pagination :pages="pagination" @emitPages="getProducts"></Pagination>
 

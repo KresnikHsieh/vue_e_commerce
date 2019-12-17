@@ -39,6 +39,11 @@
             		<i class="fas fa-shopping-cart"></i> 模擬訂單
           		</router-link> 
             </li>
+            <li class="nav-item">
+              <router-link to="/" class="nav-link">
+            		<i class="fas fa-shopping-cart"></i> 使用者頁面
+          		</router-link> 
+            </li>
             </ul>
         </div>
         </nav>    
