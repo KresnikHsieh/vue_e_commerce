@@ -1,19 +1,27 @@
 <template>
   <div>
-    <img src="../../assets/logo.png">
+    <!-- loading頁面效果
+    <loading :active.sync="isLoading"></loading> -->
+
+    <div class="text-left mt-4 ml-4">
+      <router-link to="/">
+        <h4><i class="fas fa-box-open"></i> 回到商場首頁</h4>
+      </router-link>
+    </div>
+    <img src="../../assets/aperture_logo_redbig.png">
     <form class="form-signin" @submit.prevent="signin"> 
         <!-- 直接在form上面綁定submit事件-->
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only" >Email address</label>
+        <h1 class="h3 mb-3 font-weight-normal login-title">請登入管理者系統</h1>
+        <label for="inputEmail" class="sr-only" >請輸入Email</label>
         <input type="email" id="inputEmail" class="form-control" v-model="user.username" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="inputPassword" class="sr-only">請輸入密碼</label>
         <input type="password" id="inputPassword" class="form-control" v-model="user.password" placeholder="Password" required>
         <div class="checkbox mb-3">
             <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> 記得我
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
         </form>
   </div>
@@ -91,6 +99,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+img{
+  margin: 20px;
+}
+
+.login-title{
+ margin-top:0px;
 }
 </style>
 

@@ -32,6 +32,7 @@ export default new Router({
       path: '/admin',
       name: 'Dashboard',
       component: Dashboard,
+      meta: { requiresAuth: true },
       children: [ 
         { //建立巢狀的router-view
           path: 'products',
