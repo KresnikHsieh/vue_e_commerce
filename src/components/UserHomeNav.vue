@@ -6,13 +6,15 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +886-912-077-622</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> x19921111@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 台北市佳能區無敵寺路24號70巷2樓8號</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
+						<li><a href="#"><i class="fa fa-user-o"></i> 
+							<router-link to="/admin">管理者控制台</router-link>
+						</a></li>
 					</ul>
 				</div>
 			</div>
@@ -40,12 +42,13 @@
 							<div class="header-search">
 								<form>
 									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
+										<option value="0">全部分類商品</option>
+										<option value="1">專業數位單眼相機</option>
+										<option value="1">專業數位光學鏡頭</option>
+										<option value="1">專業閃光燈與配件</option>
 									</select>
 									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
+									<button class="search-btn">搜尋</button>
 								</form>
 							</div>
 						</div>
@@ -136,13 +139,14 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav" style="-webkit-box-orient: horizontal;">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li class="active"><a href="#">首頁</a></li>
+						<li><a href="#">最新折扣</a></li>
+						<li><a href="/#/">專業數位單眼相機</a></li>
+						<li><a href="/#/">專業數位光學鏡頭</a></li>
+						<li><a href="/#/">專業閃光燈與配件</a></li>
+						<li><a href="/#/about">關於我們</a></li>
+						<li><a href="/#/">聯絡我們</a></li>
+						<!-- <li><a href="#">Accessories</a></li> -->
 					</ul>
 					<!-- /NAV -->
 				</div>

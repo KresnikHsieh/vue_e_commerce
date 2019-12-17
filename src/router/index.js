@@ -12,6 +12,7 @@ import UserHomeMain from '@/components/UserHomeMain';
 import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import UserHome from '@/components/pages/UserHome';
 import Cart from '@/components/pages/Cart';
+import About from '@/components/pages/About';
 
 Vue.use(Router)
 
@@ -113,6 +114,11 @@ export default new Router({
           name: 'CustomerCheckout',
           component: CustomerCheckout,
           meta: { requiresAuth: false },  
+        },
+        { //建立巢狀的router-view: 關於我們
+          path: 'about',
+          name: 'About',
+          component: About,
         },
 
       ],

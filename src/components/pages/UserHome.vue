@@ -257,6 +257,7 @@
 .header-ctn>div>a> .shopping-cart-RL span,
 .dropdown-toggle::after{
 	color:#FFFF;
+	font-size: 14px;
 }
 
 </style>
