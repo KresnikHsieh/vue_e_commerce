@@ -3,6 +3,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./dashboard"; //載入dashboard的scss
 
+
+
 .products-tabs{
   .tab-pane{
   padding-bottom: 100px;
@@ -34,4 +36,104 @@
 
 .dropdown-toggle::after{
   display: none;
+}
+
+.userhome-title{
+  text-align: left;
+}
+
+.userhome-title h3{
+  font-size: 20px;
+}
+
+.section-nav{
+  font-size:16px;
+}
+
+.img100{
+  width:100%;
+}
+
+.intro-page-title{
+  margin: 30px 0px 60px 0px;
+}
+
+.coupon-outer-box{
+  border: 1px solid#00ADEE;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.coupon-discount-box{
+  text-align: right;
+  height: 75px;
+  line-height:75px;
+}
+.coupon-discount-num{
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+#about-section{
+  line-height: 1.7;
+  color: gray;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+
+.contact-info{
+  font-size: 20px;
+  li{
+    a{
+      color: $main-red;
+    }
+  }
+}
+
+.experience {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background:$main-red;
+  padding: 20px; }
+.experience .year {
+    font-weight: 900;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: normal;
+    line-height: 1.2;
+}
+.experience span {
+    display: block;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.experience .caption {
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.section-sub-title {
+  font-size: 13px;
+  color: #adb5bd;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.section-title {
+  color: #000;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }

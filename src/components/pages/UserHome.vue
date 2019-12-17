@@ -68,7 +68,7 @@
 				<div class="row">
 					<!-- section title -->
 					<div class="col-md-12">
-						<div class="section-title">
+						<div class="section-title userhome-title">
 							<h3 class="title">熱銷商品</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
