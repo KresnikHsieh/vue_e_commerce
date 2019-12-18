@@ -141,9 +141,9 @@
 					<ul class="main-nav nav navbar-nav" style="-webkit-box-orient: horizontal;">
 						<li class="active"><a href="#">首頁</a></li>
 						<li><a href="/#/"><router-link to="/newcoupon">最新折扣</router-link></a></li>
-						<li><a href="/#/">專業數位單眼相機</a></li>
-						<li><a href="/#/">專業數位光學鏡頭</a></li>
-						<li><a href="/#/">專業閃光燈與配件</a></li>
+						<li><a href="#">專業數位單眼相機</a></li>
+						<li><a href="#">專業數位光學鏡頭</a></li>
+						<li><a href="#">專業閃光燈與配件</a></li>
 						<li><a href="/#/"><router-link to="/about">關於我們</router-link></a></li>
 						<li><a href="/#/"><router-link to="/contact">聯絡我們</router-link></a></li>
 						<!-- <li><a href="#">Accessories</a></li> -->
