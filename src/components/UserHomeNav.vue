@@ -30,9 +30,9 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<router-link to="/"></router-link>
+									<router-link to="/"><img src="../assets/aperture_logo.png"></router-link>
 									<!-- <img src="https://colorlib.com/preview/theme/electro/img/logo.png" alt=""> -->
-									<img src="../assets/aperture_logo.png">
+									
 								</a>
 							</div>
 						</div>
