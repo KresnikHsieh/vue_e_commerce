@@ -24,10 +24,10 @@
 							<div class="footer">
 								<h3 class="footer-title">產品與折扣</h3>
 								<ul class="footer-links">
-									<li><a href="#"><router-link to="/newcoupon">最新折扣</router-link></a></li>
-									<li><a href="#">專業數位單眼相機</a></li>
-									<li><a href="#">專業數位光學鏡頭</a></li>
-									<li><a href="#">專業閃光燈與配件</a></li>
+									<li><a href=""><router-link to="/newcoupon">最新折扣</router-link></a></li>
+									<li><a href="">專業數位單眼相機</a></li>
+									<li><a href="">專業數位光學鏡頭</a></li>
+									<li><a href="">專業閃光燈與配件</a></li>
 									<!-- <li><a href="#">Accessories</a></li> -->
 								</ul>
 							</div>
@@ -39,8 +39,8 @@
 							<div class="footer">
 								<h3 class="footer-title">相關資訊</h3>
 								<ul class="footer-links">
-									<li><a href="/#/"><router-link to="/about">關於我們</router-link></a></li>
-									<li><a href="/#/"><router-link to="/contact">聯絡我們</router-link></a></li>
+									<li><a href=""><router-link to="/about">關於我們</router-link></a></li>
+									<li><a href=""><router-link to="/contact">聯絡我們</router-link></a></li>
 									<!-- <li><a href="#">Privacy Policy</a></li>
 									<li><a href="#">Orders and Returns</a></li>
 									<li><a href="#">Terms & Conditions</a></li> -->
@@ -52,7 +52,7 @@
 							<div class="footer">
 								<h3 class="footer-title">商家系統</h3>
 								<ul class="footer-links">
-									<li><a href="#"><router-link to="/admin">管理者控制台</router-link></a></li>
+									<li><a href=""><router-link to="/admin">管理者控制台</router-link></a></li>
 									<!-- <li><a href="#">View Cart</a></li>
 									<li><a href="#">Wishlist</a></li>
 									<li><a href="#">Track My Order</a></li>
@@ -74,12 +74,12 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+								<li><a href=""><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href=""><i class="fa fa-credit-card"></i></a></li>
+								<li><a href=""><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href=""><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href=""><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href=""><i class="fa fa-cc-amex"></i></a></li>
 							</ul>
 							<span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
